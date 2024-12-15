@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список взятых книг</title>
+</head>
+<body>
+    <h1>Список взятых книг</h1>
+    <a href="{% url 'add_borrowed_book' %}">Добавить взятую книгу</a>
+    {% if borrowed_books %}
+        <ul>
+            {% for book in borrowed_books %}
+                <li>
+                    {{ book }}
+                    <a href="{% url 'edit_borrowed_book' book.id %}">Редактировать</a>
+                    <a href="{% url 'delete_borrowed_book' book.id %}">Удалить</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет взятых книг.</p>
+    {% endif %}
+</body>
+</html>

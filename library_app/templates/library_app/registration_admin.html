@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация администратора</title>
+</head>
+<body>
+    <h1>Регистрация администратора</h1>
+    <form action="POST" method="POST" enctype="multipart/form-data" id="registration_form">
+        {% csrf_token %}
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" placeholder="Введите имя пользователя." required>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" placeholder="Введите пароль." required>
+        <label for="confirm_password">Подтвердите пароль:</label>
+        <input type="password" name="confirm_password" placeholder="Повторите ввод пароля." required>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</body>

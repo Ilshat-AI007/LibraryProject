@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список читателей</title>
+</head>
+<body>
+    <h1>Список читателей</h1>
+    <a href="{% url 'add_reader' %}">Добавить читателя</a>
+    {% if readers %}
+        <ul>
+            {% for reader in readers %}
+                <li>
+                    <a href="{% url 'reader_detail' reader.id %}">{{ reader.full_name }}</a>
+                    <a href="{% url 'edit_reader' reader.id %}">Редактировать</a>
+                    <a href="{% url 'delete_reader' reader.id %}">Удалить</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><strong>Нет зарегистрированных читателей.</strong></p>
+    {% endif %}
+</body>
+</html>

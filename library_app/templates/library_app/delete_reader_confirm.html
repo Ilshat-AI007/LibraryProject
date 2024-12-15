@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить читателя</title>
+</head>
+<body>
+    <h1>Вы уверены, что хотите удалить читателя "{{ object.full_name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Да, удалить">
+        <a href="{% url 'reader_list' %}">Отмена</a>
+    </form>
+</body>
+</html>

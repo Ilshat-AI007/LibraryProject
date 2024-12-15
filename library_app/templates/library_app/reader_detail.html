@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали читателя</title>
+</head>
+<body>
+    <h1>Детали читателя</h1>
+    <p>Имя: {{ object.first_name }} {{ object.last_name }}</p>
+    <p>Телефон: {{ object.phone_number }}</p>
+    <p>Email: {{ object.email }}</p>
+    <p>Дата регистрации: {{ object.registration_date|date:"d-m-Y" }}</p>
+</body>
+</html>
